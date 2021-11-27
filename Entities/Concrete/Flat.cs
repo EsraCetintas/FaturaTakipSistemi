@@ -7,12 +7,15 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-   public class Invoice:IEntity
+   public class Flat:IEntity
     {
         public int Id { get; set; }
-        public int FlatId { get; set; }
-        public int CategoryId { get; set; }
+        public int FlatTypeId { get; set; }
         public int UserId { get; set; }
-        public decimal Amount { get; set; }
+        public int ApartmentId { get; set; }
+        public int FloorNo { get; set; }
+        public int FlatNo { get; set; }
+        public bool State { get; set; }
+       
     }
 }
