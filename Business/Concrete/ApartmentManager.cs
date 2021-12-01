@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Business.Concrete
 {
     public class ApartmentManager : IApartmentService
     {
+        IApartmentDal _apartmentDal;
+
+        public ApartmentManager(IApartmentDal apartmentDal)
+        {
+            _apartmentDal = apartmentDal;
+        }
+
         public void Add(Apartment apartment)
         {
-            throw new NotImplementedException();
+            _apartmentDal.Add(apartment);
         }
 
         public void Delete(Apartment apartment)
         {
-            throw new NotImplementedException();
+            _apartmentDal.Delete(apartment);
         }
 
         public Apartment Get(int id)
         {
-            throw new NotImplementedException();
+            return _apartmentDal.Get(a=>a.Id==id);
         }
 
         public List<Apartment> GetAll()
         {
-            throw new NotImplementedException();
+           return _apartmentDal.GetAll();
         }
 
         public void Update(Apartment apartment)
         {
-            throw new NotImplementedException();
+            _apartmentDal.Update(apartment);
         }
     }
 }

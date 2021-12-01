@@ -7,21 +7,16 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Concrete.InMemory
+namespace DataAccess.Concrete.EntityFramework
 {
-    public class InMemoryInvoiceDal : IInvoiceDal
+    public class EfInvoiceDal : IInvoiceDal
     {
-        public void Add(Invoice invoice)
-        {
-            throw new NotImplementedException();
-        }
-      
-        public void Delete(Invoice invoice)
+        public void Add(Invoice entity)
         {
             throw new NotImplementedException();
         }
 
-        public Invoice Get()
+        public void Delete(Invoice entity)
         {
             throw new NotImplementedException();
         }
@@ -31,17 +26,12 @@ namespace DataAccess.Concrete.InMemory
             throw new NotImplementedException();
         }
 
-        public List<Invoice> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
         public List<Invoice> GetAll(Expression<Func<Invoice, bool>> filter = null)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Invoice invoice)
+        public void Update(Invoice entity)
         {
             throw new NotImplementedException();
         }

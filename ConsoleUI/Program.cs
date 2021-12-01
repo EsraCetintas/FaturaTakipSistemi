@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Business.Concrete;
+using DataAccess.Concrete.EntityFramework;
+using System;
 
 namespace ConsoleUI
 {
@@ -6,7 +8,11 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ApartmentManager apartmentManager = new ApartmentManager(new EfApartmentDal());
+            foreach (var apartment in apartmentManager.GetAll())
+            {
+                Console.WriteLine(apartment.BlokNo);
+            }
         }
     }
 }
