@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTO_s;
 using System;
@@ -11,34 +12,41 @@ namespace Business.Concrete
 {
     public class InvoiceManager : IInvoiceService
     {
+        IInvoiceDal _invoiceDal;
+
+        public InvoiceManager(IInvoiceDal invoiceDal)
+        {
+            _invoiceDal = invoiceDal;
+        }
+
         public void Add(Invoice invoice)
         {
-            throw new NotImplementedException();
+            _invoiceDal.Add(invoice);
         }
 
         public void Delete(Invoice invoice)
         {
-            throw new NotImplementedException();
+            _invoiceDal.Delete(invoice);
         }
 
         public Invoice Get(int id)
         {
-            throw new NotImplementedException();
+            return _invoiceDal.Get(i=>i.Id==id);
         }
 
         public List<Invoice> GetAll()
         {
-            throw new NotImplementedException();
+            return _invoiceDal.GetAll();
         }
 
         public List<InvoiceDetailDto> GetInvoiceDetails()
         {
-            throw new NotImplementedException();
+            return _invoiceDal.GetInvoiceDetails();
         }
 
         public void Update(Invoice invoice)
         {
-            throw new NotImplementedException();
+            _invoiceDal.Update(invoice);
         }
     }
 }

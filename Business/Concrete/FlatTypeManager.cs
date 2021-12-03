@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Business.Concrete
 {
     public class FlatTypeManager : IFlatTypeService
     {
+        IFlatTypeDal _flatTypeDal;
+
+        public FlatTypeManager(IFlatTypeDal flatTypeDal)
+        {
+            _flatTypeDal = flatTypeDal;
+        }
+
         public void Add(FlatType flatType)
         {
-            throw new NotImplementedException();
+            _flatTypeDal.Add(flatType);
         }
 
         public void Delete(FlatType flatType)
         {
-            throw new NotImplementedException();
+            _flatTypeDal.Add(flatType);
         }
 
         public FlatType Get(int id)
         {
-            throw new NotImplementedException();
+            return _flatTypeDal.Get(f=>f.Id==id);
         }
 
         public List<FlatType> GetAll()
         {
-            throw new NotImplementedException();
+           return _flatTypeDal.GetAll();
         }
 
         public void Update(FlatType flatType)
         {
-            throw new NotImplementedException();
+            _flatTypeDal.Add(flatType);
         }
     }
 }

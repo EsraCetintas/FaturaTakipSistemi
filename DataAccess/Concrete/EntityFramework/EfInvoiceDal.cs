@@ -22,7 +22,7 @@ namespace DataAccess.Concrete.EntityFramework
                              on i.CategoryId equals c.Id
                              select new InvoiceDetailDto
                              {
-
+                                 InvoiceId=i.Id,CategoryName=c.CategoryName,Amount=i.Amount
                              };
                 return result.ToList();
             }

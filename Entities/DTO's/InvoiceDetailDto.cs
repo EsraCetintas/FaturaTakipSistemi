@@ -10,6 +10,8 @@ namespace Entities.DTO_s
    public class InvoiceDetailDto:IDto
     {
         public int InvoiceId { get; set; }
+        public string CategoryName { get; set; }
+        public decimal Amount { get; set; }
 
     }
 }
