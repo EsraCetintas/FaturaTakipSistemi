@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,16 @@ namespace Business.Concrete
 {
     public class DueManager : IDueService
     {
+        IDueDal _dueDal;
+
+        public DueManager(IDueDal dueDal)
+        {
+            _dueDal = dueDal;
+        }
+
         public void Add(Due due)
         {
-            throw new NotImplementedException();
+            _dueDal.Add(due);
         }
 
         public void Delete(Due due)

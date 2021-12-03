@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Business.Concrete
 {
     public class DebtManager : IDebtService
     {
+        IDebtDal _debtDal;
+
+        public DebtManager(IDebtDal debtDal)
+        {
+            _debtDal = debtDal;
+        }
+
         public void Add(Debt debt)
         {
-            throw new NotImplementedException();
+            _debtDal.Add(debt);
         }
 
         public void Delete(Debt debt)
         {
-            throw new NotImplementedException();
+            _debtDal.Delete(debt);
         }
 
         public Debt Get(int id)
         {
-            throw new NotImplementedException();
+            return _debtDal.Get(d=>d.Id==id);
         }
 
         public List<Debt> GetAll()
         {
-            throw new NotImplementedException();
+           return _debtDal.GetAll();
         }
 
         public void Update(Debt debt)
         {
-            throw new NotImplementedException();
+            _debtDal.Update(debt);
         }
     }
 }

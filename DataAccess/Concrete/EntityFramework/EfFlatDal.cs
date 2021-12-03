@@ -1,4 +1,5 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -9,31 +10,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfFlatDal : IFlatDal
+    public class EfFlatDal : EfEntityRepositoryBase<Flat, FTSContext>, IFlatDal
     {
-        public void Add(Flat entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Flat entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Flat Get(Expression<Func<Flat, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Flat> GetAll(Expression<Func<Flat, bool>> filter = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Flat entity)
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

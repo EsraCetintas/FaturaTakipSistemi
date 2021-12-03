@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using Entities.DTO_s;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,11 @@ namespace Business.Concrete
         }
 
         public List<Invoice> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<InvoiceDetailDto> GetInvoiceDetails()
         {
             throw new NotImplementedException();
         }

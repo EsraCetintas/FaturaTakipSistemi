@@ -1,5 +1,7 @@
-﻿using DataAccess.Abstract;
+﻿using Core.DataAccess.EntityFramework;
+using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTO_s;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,31 +11,22 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfInvoiceDal : IInvoiceDal
+    public class EfInvoiceDal : EfEntityRepositoryBase<Invoice, FTSContext>, IInvoiceDal
     {
-        public void Add(Invoice entity)
+        public List<InvoiceDetailDto> GetInvoiceDetails()
         {
-            throw new NotImplementedException();
-        }
+            using (FTSContext context=new FTSContext())
+            {
+                var result = from i in context.Invoices
+                             join c in context.Categories
+                             on i.CategoryId equals c.Id
+                             select new InvoiceDetailDto
+                             {
 
-        public void Delete(Invoice entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Invoice Get(Expression<Func<Invoice, bool>> filter)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Invoice> GetAll(Expression<Func<Invoice, bool>> filter = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Invoice entity)
-        {
-            throw new NotImplementedException();
+                             };
+                return result.ToList();
+            }
+           
         }
     }
 }
