@@ -9,36 +9,36 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public class CategoryManager : ICategoryService
+    public class InvoiceCategoryManager : IInvoiceCategoryService
     {
-        ICategoryDal _categoryDal;
+        IInvoiceCategoryDal _categoryDal;
 
-        public CategoryManager(ICategoryDal categoryDal)
+        public InvoiceCategoryManager(IInvoiceCategoryDal categoryDal)
         {
             _categoryDal = categoryDal;
         }
 
-        public void Add(Category category)
+        public void Add(InvoiceCategory category)
         {
             _categoryDal.Add(category);
         }
 
-        public void Delete(Category category)
+        public void Delete(InvoiceCategory category)
         {
             _categoryDal.Delete(category);
         }
 
-        public Category Get(int id)
+        public InvoiceCategory Get(int id)
         {
             return _categoryDal.Get(c=>c.Id==id);
         }
 
-        public List<Category> GetAll()
+        public List<InvoiceCategory> GetAll()
         {
            return _categoryDal.GetAll();
         }
 
-        public void Update(Category category)
+        public void Update(InvoiceCategory category)
         {
             _categoryDal.Update(category);
         }

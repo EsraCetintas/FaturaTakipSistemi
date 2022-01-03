@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace Entities.Concrete
 {
-    public class Debt: IEntity
+  public class InvoiceCategory:IEntity
     {
         public int Id { get; set; }
-        public int FlatId { get; set; }
-        public int Amount { get; set; }
+        public string CategoryName { get; set; }
     }
 }

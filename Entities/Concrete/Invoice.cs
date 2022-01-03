@@ -12,7 +12,8 @@ namespace Entities.Concrete
         public int Id { get; set; }
         public int FlatId { get; set; }
         public int CategoryId { get; set; }
-        public int UserId { get; set; }
         public decimal Amount { get; set; }
+        public DateTime? PaymentDate { get; set; }
+        public DateTime? Deadline { get; set; }
     }
 }

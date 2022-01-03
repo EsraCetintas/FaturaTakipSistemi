@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-   public interface IDebtDal : IEntityRepository<Debt>
+   public interface IInvoiceCategoryDal : IEntityRepository<InvoiceCategory>
     {
     }
 }

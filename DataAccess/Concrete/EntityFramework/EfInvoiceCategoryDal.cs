@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfCategoryDal : EfEntityRepositoryBase<Category, FTSContext>,ICategoryDal
+    public class EfInvoiceCategoryDal : EfEntityRepositoryBase<InvoiceCategory, FTSContext>,IInvoiceCategoryDal
     {
        
     }
