@@ -18,12 +18,10 @@ namespace DataAccess.Concrete.EntityFramework
 
         public DbSet<Apartment> Apartments { get; set; }
         public DbSet<InvoiceCategory> InvoiceCategories { get; set; }
-        public DbSet<Debt> Debts { get; set; }
         public DbSet<Due> Dues { get; set; }
         public DbSet<Flat> Flats { get; set; }
         public DbSet<FlatType> FlatTypes { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
-        public DbSet<Payment> Payments { get; set; }
 
     }
 }
