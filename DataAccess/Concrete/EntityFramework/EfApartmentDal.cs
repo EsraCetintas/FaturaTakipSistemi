@@ -13,6 +13,5 @@ namespace DataAccess.Concrete.EntityFramework
 {
     public class EfApartmentDal : EfEntityRepositoryBase<Apartment,FTSContext>,IApartmentDal
     {
-      
     }
 }

@@ -1,4 +1,5 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities.Results;
+using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,8 @@ namespace Business.Abstract
     {
         List<Apartment> GetAll();
         Apartment Get(int id);
-        void Add(Apartment apartment);
-        void Delete(Apartment apartment);
-        void Update(Apartment apartment);
+        IResult Add(Apartment apartment);
+        IResult Delete(Apartment apartment);
+        IResult Update(Apartment apartment);
     }
 }

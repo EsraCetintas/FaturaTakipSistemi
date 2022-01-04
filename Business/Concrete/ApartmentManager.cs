@@ -18,12 +18,12 @@ namespace Business.Concrete
             _apartmentDal = apartmentDal;
         }
 
-        public void Add(Apartment apartment)
+        public IResult Add(Apartment apartment)
         {
             _apartmentDal.Add(apartment);
         }
 
-        public void Delete(Apartment apartment)
+        public IResult Delete(Apartment apartment)
         {
             _apartmentDal.Delete(apartment);
         }
@@ -38,7 +38,7 @@ namespace Business.Concrete
            return _apartmentDal.GetAll();
         }
 
-        public void Update(Apartment apartment)
+        public IResult Update(Apartment apartment)
         {
             _apartmentDal.Update(apartment);
         }
